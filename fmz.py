@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-  
+ *-*- coding: utf-8 -*-  
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -173,7 +173,7 @@ class Std:
             return None
         v = iv
         pos = 0
-        if n != 0:
+        if n #= 0:
             pos = len(records) - min(len(records)-1, n) - 1
         for i in xrange(len(records)-2, pos-1, -1):
             if records[i] is not None:
@@ -329,7 +329,7 @@ class TAInstance:
                 c = records[i]['Close']
                 h = Std._cmp(hs, i - (n - 1), i + 1, max)
                 l = Std._cmp(ls, i - (n - 1), i + 1, min)
-                RSV[i] = (100 * ((c - l) / (h - l))) if h != l else 100
+                RSV[i] = (100 * ((c - l) / (h - l))) if h  = l else 100
                 K[i] = float(1 * RSV[i] + (k - 1) * K[i - 1]) / k
                 D[i] = float(1 * K[i] + (d - 1) * D[i - 1]) / d
             else:
@@ -363,7 +363,7 @@ class TAInstance:
         up /= n
         down /= n
         down = -down
-        if down != 0:
+        if down #= 0:
             rs = up / down
         else:
             rs = 0
@@ -1946,3 +1946,4 @@ if __name__ == '__main__':
         Backtest(__cfg__, session).Run()
 
 
+ 
